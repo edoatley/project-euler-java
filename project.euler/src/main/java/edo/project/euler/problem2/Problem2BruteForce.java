@@ -19,6 +19,21 @@ package edo.project.euler.problem2;
 public class Problem2BruteForce {
 
 	public int solve(int maximum) {
-		return 0;
+		int prevTerm = 1;
+		int thisTerm = 2;
+		int evensums = 0;
+		
+		while (thisTerm < maximum) {
+			if (thisTerm % 2 == 0) {
+				evensums += thisTerm;
+			}
+			int temp = prevTerm + thisTerm;
+			prevTerm = thisTerm;
+			thisTerm = temp;			
+		}
+		
+		return evensums;
 	}
+	
+	
 }

@@ -22,4 +22,15 @@ public class Problem2Refined {
 		return 0;
 	}
 	
+	private int fibonacci(int termInSeq) {
+		if(termInSeq == 0) {
+			return 0;
+		}
+		else if(termInSeq == 1) {
+			return 1;
+		}
+		else {
+			return fibonacci(termInSeq - 2) + fibonacci(termInSeq - 1); 
+		}
+	}
 }
