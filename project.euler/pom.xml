@@ -6,9 +6,9 @@
   <artifactId>project.euler</artifactId>
   <version>0.0.1-SNAPSHOT</version>
  
-  <name>A custom project</name>
-  <url>http://www.edo.org</url>
- 
+  <name>Project Euler solutions</name>
+  <url>https://projecteuler.net</url>
+    
     <!-- Shared version number properties -->
 	<properties>
 	    <org.springframework.version>3.0.0.RELEASE</org.springframework.version>

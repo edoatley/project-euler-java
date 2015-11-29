@@ -13,4 +13,17 @@ package edo.project.euler.problem1;
  */
 public class Problem1BruteForce {
 
+	public int solve(int maximum) {
+		
+		int total = 0;
+		
+		for (int i = 0; i < maximum; i++) {
+			if((i % 3 == 0) 
+			|| (i % 5 == 0)) {
+				total += i;
+			}
+		}
+		
+		return total;
+	}
 }
