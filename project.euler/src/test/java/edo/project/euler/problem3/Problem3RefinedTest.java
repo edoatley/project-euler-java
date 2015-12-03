@@ -26,12 +26,5 @@ public class Problem3RefinedTest extends TestCase {
 		long actual = prob3.solve(testee);
 		assertEquals(expected, actual);
 	}
-	@Test
-	public void testWorksForHarderCase2() {
-		long expected = 29;
-		long testee = 6008514732323l; 
-		long actual = prob3.solve(testee);
-		assertEquals(expected, actual);
-	}
 
 }
