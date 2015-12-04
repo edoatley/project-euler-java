@@ -14,8 +14,9 @@ package edo.project.euler.problem3;
  */
 public class Problem3Refined {
 
-	// try looping toward each other skipping even numbers and numbers divisible by 5
-	
+	// try looping toward each other skipping even numbers and numbers divisible by 5	
+	// if divides exactly then update testee and call recursively unless the other 
+	// number is prime in which case break
 	public long solve(long testee) {
 		
 		long testValue = testee;
@@ -25,7 +26,8 @@ public class Problem3Refined {
 			if (testValue % i == 0) {
 				if(isPrime(i)) {
 					testValue /= i;
-					if(testValue == 1) {
+					// dividing by self therefore this is the largest prime
+					if(testValue == 1) {	
 						return i;
 					}
 					limit = testee / 2;
@@ -33,14 +35,20 @@ public class Problem3Refined {
 
 				}
 			}
-			// if divides exactly then update testee and call recursively unless the other number is prime in which case break
 		}
 		return -1l;
 	}
 	
+	// Checks if the number is even then checks
+	// all potential factors between 3 and half
+    // the number skipping the even numbers	
 	public boolean isPrime(long testee) {
+		if(testee % 2 == 0) {
+			return false;
+		}
 		
-		for (long i = 2; i < testee / 2; i++) {
+		long limit = testee / 2;
+		for (long i = 3; i < limit; i+=2) {
 			if(testee % i == 0) {
 				return false;
 			}
