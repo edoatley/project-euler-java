@@ -14,7 +14,7 @@ package edo.project.euler.problem7;
  */
 public class Problem7Refined {
 	
-	public int solve() {
+	public int solve(int primeRequired) {
 		return -1;
 	}
 	
