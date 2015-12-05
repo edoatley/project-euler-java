@@ -24,6 +24,8 @@ package edo.project.euler.problem6;
  */
 public class Problem6Refined {
 	
+	
+	// (1 + 2 +3)^2 - (1^2 + 2^2 + 3^2) = x 
 	public int solve(int numberOfNumbers) {
 		
 		int sumOfSquares = 0;
