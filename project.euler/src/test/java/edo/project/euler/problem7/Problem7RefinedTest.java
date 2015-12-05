@@ -15,14 +15,14 @@ public class Problem7RefinedTest extends TestCase {
 	
 	@Test
 	public void testWorksForSimplestCase() {
-		int expected = 13;
-		int actual = prob7.solve(6);
+		long expected = 13;
+		long actual = prob7.solve(6);
 		assertEquals(expected, actual);
 	}
 	@Test
 	public void testWorksForHardCase() {
-		int expected = 25174150;
-		int actual = prob7.solve(10001);
+		long expected = 104743;
+		long actual = prob7.solve(10001);
 		assertEquals(expected, actual);
 	}
 }
