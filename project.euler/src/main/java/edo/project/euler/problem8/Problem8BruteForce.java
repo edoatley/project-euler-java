@@ -2,10 +2,14 @@ package edo.project.euler.problem8;
 
 
 /**
- * Problem 8 - 
+ * Problem 8 - Largest product in a series
  * =========================
  * 
- *
+ * The four adjacent digits in the 1000-digit number that have the greatest product are 9 × 9 × 8 × 9 = 5832.
+ * 
+ * Find the thirteen adjacent digits in the 1000-digit number that have the greatest product. 
+ * What is the value of this product?
+ * 
  * @author Edd
  *
  */
@@ -26,9 +30,9 @@ public class Problem8BruteForce {
 	}
 	
 	public long product(String testString) {
-		long product = 1;
+		long product = 1l;
 		for (int i = 0; i < testString.length(); i++) {
-			product *= Integer.valueOf(testString.charAt(i));
+			product *= Integer.valueOf(testString.substring(i, i+1));
 		}
 		return product;
 	}
