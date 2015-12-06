@@ -15,7 +15,9 @@ public class Problem8BruteForceTest extends TestCase {
 	
 	@Test
 	public void testWorksForSimplestCase() {
-
+		long expected = 9205903071867879424l;
+		long actual = prob8.solve();
+		assertEquals(expected, actual);
 	}
 
 }

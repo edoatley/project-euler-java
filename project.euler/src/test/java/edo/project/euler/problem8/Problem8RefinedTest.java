@@ -15,6 +15,8 @@ public class Problem8RefinedTest extends TestCase {
 	
 	@Test
 	public void testWorksForSimplestCase() {
-
+		long expected = 1;
+		long actual = prob8.solve();
+		assertEquals(expected, actual);
 	}
 }
