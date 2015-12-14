@@ -15,7 +15,9 @@ public class Problem9BruteForceTest extends TestCase {
 	
 	@Test
 	public void testWorksForSimplestCase() {
-
+		int expected = 31875000;
+		int actual = prob9.solve();
+		assertEquals(expected, actual);
 	}
 
 }
