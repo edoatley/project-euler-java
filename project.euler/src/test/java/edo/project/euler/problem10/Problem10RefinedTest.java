@@ -20,11 +20,11 @@ public class Problem10RefinedTest extends TestCase {
 		assertEquals(expected, actual);
 	}
 	
-	@Test
-	public void testWorksForBigCase() {
-		long expected = 1075207199997334l;
-		long actual = prob10.solve(200000000);
-		assertEquals(expected, actual);
-	}
+//	@Test
+//	public void testWorksForBigCase() {
+//		long expected = 1075207199997334l;
+//		long actual = prob10.solve(200000000);
+//		assertEquals(expected, actual);
+//	}
 	
 }
