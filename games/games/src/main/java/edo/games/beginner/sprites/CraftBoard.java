@@ -8,6 +8,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import java.util.List;
+
 import javax.swing.JPanel;
 import javax.swing.Timer;
 
@@ -49,17 +51,41 @@ public class CraftBoard extends JPanel implements ActionListener {
     private void doDrawing(Graphics g) {
         
         Graphics2D g2d = (Graphics2D) g;
-        g2d.drawImage(craft.getImage(), craft.getX(), craft.getY(), this);        
+        g2d.drawImage(craft.getImage(), craft.getX(), craft.getY(), this);   
+        
+        List<Missile> missiles = craft.getMissiles();
+        for (Missile m : missiles) {
+            g2d.drawImage(m.getImage(), m.getX(), m.getY(), this);
+		}
     }
 
     //@Override
     public void actionPerformed(ActionEvent e) {
         
-        craft.move();
-        repaint();  
+    	updateMissiles();
+        updateCraft();
+
+        repaint();
     }
 
-    private class TAdapter extends KeyAdapter {
+    private void updateCraft() {
+    	craft.move();
+	}
+
+	private void updateMissiles() {
+        List<Missile> missiles = craft.getMissiles();
+        for (int i = 0; i < missiles.size(); i++) {
+        	Missile m = missiles.get(i);
+        	if (m.isVisible()) {
+                m.move();
+            } 
+        	else {
+        		missiles.remove(i);
+            }
+		}
+	}
+
+	private class TAdapter extends KeyAdapter {
 
         @Override
         public void keyReleased(KeyEvent e) {

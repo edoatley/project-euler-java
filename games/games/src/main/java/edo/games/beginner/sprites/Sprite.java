@@ -1,6 +1,8 @@
 package edo.games.beginner.sprites;
 
 import java.awt.Image;
+import java.net.URL;
+
 import javax.swing.ImageIcon;
 
 public class Sprite {
@@ -19,9 +21,9 @@ public class Sprite {
         vis = true;
     }
 
-    protected void loadImage(String imageName) {
+    protected void loadImage(URL imageURL) {
 
-        ImageIcon ii = new ImageIcon(imageName);
+        ImageIcon ii = new ImageIcon(imageURL);
         image = ii.getImage();
     }
     

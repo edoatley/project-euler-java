@@ -1,46 +1,40 @@
 package edo.games.beginner.sprites;
 
-import java.awt.Image;
 import java.awt.event.KeyEvent;
-import javax.swing.ImageIcon;
+import java.util.ArrayList;
+import java.util.List;
 
-public class Craft {
+public class Craft extends Sprite {
 
-    private int dx;
-    private int dy;
-    private int x;
-    private int y;
-    private Image image;
-
+	private int dx;
+	private int dy;
+	private List<Missile> missiles;
+	
     public Craft() {
-        
+        super(40, 60);
         initCraft();
     }
     
     private void initCraft() {
-        
-        ImageIcon ii = new ImageIcon(this.getClass().getResource("craft.png"));
-        image = ii.getImage();
-        x = 40;
-        y = 60;        
+    	loadImage(this.getClass().getResource("craft.png"));
+    	getImageDimensions();
+    	missiles = new ArrayList<Missile>();
     }
-
-
+    
     public void move() {
         x += dx;
         y += dy;
     }
-
-    public int getX() {
-        return x;
+    
+    public List<Missile> getMissiles() {
+        return missiles;
     }
-
-    public int getY() {
-        return y;
-    }
-
-    public Image getImage() {
-        return image;
+    
+    public void fire() {
+    	int missileStartX = x + width;        // fire from front of craft
+    	int missileStartY = y + (height / 2); // fire halfway up craft	 
+		Missile newMissile = new Missile(missileStartX, missileStartY);
+    	missiles.add(newMissile);
     }
 
     public void keyPressed(KeyEvent e) {
@@ -61,6 +55,10 @@ public class Craft {
 
         if (key == KeyEvent.VK_DOWN) {
             dy = 1;
+        }
+        
+        if (key == KeyEvent.VK_SPACE) {
+        	fire();
         }
     }
 
