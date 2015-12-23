@@ -14,16 +14,22 @@ public class Problem10BruteForceTest extends TestCase {
 	}
 	
 	@Test
-	public void testWorksForSimplestCase() {
-		long expected = 1179908154;
-		long actual = prob10.solve(20000000);
+	public void testWorksForVerySimpleCase() {
+		long expected = 17;
+		long actual = prob10.solve(10);
 		assertEquals(expected, actual);
 	}
-//	@Test
-//	public void testWorksForBigCase() {
-//		long expected = 1075207199997334l;
-//		long actual = prob10.solve(200000000l);
-//		assertEquals(expected, actual);
-//	}
-
+	
+	@Test
+	public void testWorksForSimplestCase() {
+		long expected = 142913828922L;
+		long actual = prob10.solve(2000000);
+		assertEquals(expected, actual);
+	}
+	@Test
+	public void testWorksForBigCase() {
+		long expected = 1075207199997334L;
+		long actual = prob10.solve(200000000l);
+		assertEquals(expected, actual);
+	}
 }
