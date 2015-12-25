@@ -10,20 +10,27 @@ public class Craft extends Sprite {
 	private int dy;
 	private List<Missile> missiles;
 	
-    public Craft() {
-        super(40, 60);
+    public Craft(int sposX, int sposY) {
+        super(sposX, sposY);
         initCraft();
     }
     
     private void initCraft() {
+    	missiles = new ArrayList<Missile>();
     	loadImage(this.getClass().getResource("craft.png"));
     	getImageDimensions();
-    	missiles = new ArrayList<Missile>();
     }
     
     public void move() {
         x += dx;
         y += dy;
+        
+        if (x < 1) {
+            x = 1;
+        }
+        if (y < 1) {
+            y = 1;
+        }
     }
     
     public List<Missile> getMissiles() {
