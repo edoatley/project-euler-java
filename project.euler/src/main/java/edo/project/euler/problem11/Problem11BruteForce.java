@@ -1,7 +1,5 @@
 package edo.project.euler.problem11;
 
-import edo.project.euler.utils.Utility;
-
 /**
  * Problem 11 - Largest product in a grid
  * ======================================
@@ -52,7 +50,7 @@ public class Problem11BruteForce {
 		 						, { 16, 39,  5, 42, 96, 35, 31, 47, 55, 58, 88, 24,  0, 17, 54, 24, 36, 29, 85, 57 }
 		 						, { 86, 56,  0, 48, 35, 71, 89,  7,  5, 44, 44, 37, 44, 60, 21, 58, 51, 54, 17, 58 }
 		 						, { 19, 80, 81, 68, 05, 94, 47, 69, 28, 73, 92, 13, 86, 52, 17, 77,  4, 89, 55, 40 }
-		 						, { 04, 52,  8, 83, 97, 35, 99, 16,  7, 97, 57, 32, 16, 26, 26, 79, 33, 27, 98, 66 }
+		 						, {  4, 52,  8, 83, 97, 35, 99, 16,  7, 97, 57, 32, 16, 26, 26, 79, 33, 27, 98, 66 }
 		 						, { 88, 36, 68, 87, 57, 62, 20, 72,  3, 46, 33, 67, 46, 55, 12, 32, 63, 93, 53, 69 }
 		 						, { 04, 42, 16, 73, 38, 25, 39, 11, 24, 94, 72, 18,  8, 46, 29, 32, 40, 62, 76, 36 }
 		 						, { 20, 69, 36, 41, 72, 30, 23, 88, 34, 62, 99, 69, 82, 67, 59, 85, 74,  4, 36, 16 }
@@ -69,14 +67,52 @@ public class Problem11BruteForce {
 	}
 
 	private int getLargestDiagonal() {
-		// TODO Auto-generated method stub
-		return 0;
+		int max = 0;
+		
+		// left to right diagonals
+		for (int y = 0; y < 20; y++) {
+			for (int x = 0; ((y==0 && x < 20) || (y>0 && x==0)); x++) {
+				int currX = x;
+				int currY = y;
+				while (currX < 20 && currY < 20) {
+					if ((currX > 0 && currX+3 < 20)
+					 && (currY > 0 && currY+3 < 20)) {
+						int tmp = GRID[currX][currY] * GRID[currX+1][currY+1] * GRID[currX+2][currY+2] * GRID[currX+3][currY+3];
+						if(tmp > max) {
+							max = tmp;
+						}
+					}
+					currX++;
+					currY++;
+				}
+			}
+		}
+		// right to left diagonals
+		for (int y = 0; y < 20; y++) {
+			for (int x = 0; ((y==0 && x < 20) || (y>0 && x==19)); x++) {
+				int currX = x;
+				int currY = y;
+				while (currX >= 0 && currY < 20) {
+					if ((currX-3 > 0 && currX < 20)
+					 && (currY > 0 && currY+3 < 20)) {
+						int tmp = GRID[currX][currY] * GRID[currX-1][currY+1] * GRID[currX-2][currY+2] * GRID[currX-3][currY+3];
+						if(tmp > max) {
+							max = tmp;
+						}
+					}
+					currX--;
+					currY++;
+				}
+			}
+		}
+		
+		return max;
 	}
 
 	private int getLargestVertical() {
 		int max = 0;
 		for (int i = 0; i < 20; i++) {
-			for (int j = 0; j < 16; j++) {
+			for (int j = 0; j < 17; j++) {
 				int tmp = GRID[j][i] * GRID[j+1][i] * GRID[j+2][i] * GRID[j+3][i];
 				if(tmp > max) {
 					max = tmp;
@@ -89,7 +125,7 @@ public class Problem11BruteForce {
 	private int getLargestHorizontal() {
 		int max = 0;
 		for (int i = 0; i < 20; i++) {
-			for (int j = 0; j < 16; j++) {
+			for (int j = 0; j < 17; j++) {
 				int tmp = GRID[i][j] * GRID[i][j+1] * GRID[i][j+2] * GRID[i][j+3];
 				if(tmp > max) {
 					max = tmp;
