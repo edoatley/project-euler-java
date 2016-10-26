@@ -5,18 +5,18 @@ import org.junit.Test;
 
 import junit.framework.TestCase;
 
-public class Problem04BruteForceTest extends TestCase {
-	private Problem04BruteForce prob4;
+public class Problem05BruteForceTest extends TestCase {
+	private Problem05BruteForce prob5;
 	
 	@Before
 	public void setUp() {
-		prob4 = new Problem04BruteForce();
+		prob5 = new Problem05BruteForce();
 	}
 	
 	@Test
 	public void testWorksForSimplestCase() {
-		int expected = 906609;
-		int actual = prob4.solve();
+		int expected = 232792560;
+		int actual = prob5.solve();
 		assertEquals(expected, actual);
 	}
 

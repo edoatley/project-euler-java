@@ -1,16 +1,16 @@
-package edo.project.euler.problem4;
+package edo.project.euler.problem;
 
 import org.junit.Before;
 import org.junit.Test;
 
 import junit.framework.TestCase;
 
-public class Problem4RefinedTest extends TestCase {
-	private Problem4Refined prob4;
+public class Problem04RefinedTest extends TestCase {
+	private Problem04Refined prob4;
 	
 	@Before
 	public void setUp() {
-		prob4 = new Problem4Refined();
+		prob4 = new Problem04Refined();
 	}
 	
 	@Test

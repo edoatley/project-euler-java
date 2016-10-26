@@ -3,14 +3,14 @@ package edo.project.euler.problem;
 import org.junit.Before;
 import org.junit.Test;
 
-import edo.project.euler.problem.Problem3Refined;
+import edo.project.euler.problem.Problem03Refined;
 import junit.framework.TestCase;
 
 public class Problem03RefinedTest extends TestCase {
-	private Problem3Refined prob3;
+	private Problem03Refined prob3;
 	@Before
 	public void setUp() {
-		prob3 = new Problem3Refined();
+		prob3 = new Problem03Refined();
 	}
 	
 	@Test

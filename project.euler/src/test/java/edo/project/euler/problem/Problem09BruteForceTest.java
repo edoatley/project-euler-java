@@ -1,24 +1,23 @@
-package edo.project.euler.problem5;
+package edo.project.euler.problem;
 
 import org.junit.Before;
 import org.junit.Test;
 
 import junit.framework.TestCase;
 
-public class Problem5BruteForceTest extends TestCase {
-	private Problem5BruteForce prob5;
+public class Problem09BruteForceTest extends TestCase {
+	private Problem09BruteForce prob9;
 	
 	@Before
 	public void setUp() {
-		prob5 = new Problem5BruteForce();
+		prob9 = new Problem09BruteForce();
 	}
 	
 	@Test
 	public void testWorksForSimplestCase() {
-		int expected = 232792560;
-		int actual = prob5.solve();
+		int expected = 31875000;
+		int actual = prob9.solve();
 		assertEquals(expected, actual);
 	}
-
 
 }

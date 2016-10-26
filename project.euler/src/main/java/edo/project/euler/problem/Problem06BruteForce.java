@@ -1,4 +1,4 @@
-package edo.project.euler.problem6;
+package edo.project.euler.problem;
 
 
 /**

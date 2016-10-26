@@ -1,4 +1,4 @@
-package edo.project.euler.problem10;
+package edo.project.euler.problem;
 
 import org.junit.Before;
 import org.junit.Test;

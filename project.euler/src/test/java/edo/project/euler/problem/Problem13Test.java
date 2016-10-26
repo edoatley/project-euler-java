@@ -1,4 +1,4 @@
-package edo.project.euler.problem13;
+package edo.project.euler.problem;
 
 import org.junit.Test;
 

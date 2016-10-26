@@ -3,15 +3,15 @@ package edo.project.euler.problem;
 import org.junit.Before;
 import org.junit.Test;
 
-import edo.project.euler.problem.Problem2BruteForce;
+import edo.project.euler.problem.Problem02BruteForce;
 import junit.framework.TestCase;
 
 public class Problem02BruteForceTest extends TestCase {
-	private Problem2BruteForce prob2;
+	private Problem02BruteForce prob2;
 	
 	@Before
 	public void setUp() {
-		prob2 = new Problem2BruteForce();
+		prob2 = new Problem02BruteForce();
 	}
 	
 	@Test
