@@ -13,7 +13,7 @@ package edo.project.euler.problem4;
  * @author Edd
  *
  */
-public class Problem4Refined {
+public class Problem04Refined {
 
 	// 999 * 999 = 998001
 	// 100 * 100 =  10000

@@ -12,7 +12,7 @@ package edo.project.euler.problem5;
  * @author Edd
  *
  */
-public class Problem5Refined {
+public class Problem05Refined {
 
 	// x = 20a = 19b = 18c = 17d = 16e = 15f = 14g = 13h = 12i = 11j = 10k = 9l = 8m = 7n = 6o = 5p = 4q = 3r = 2s 
 	// must be divisible by all the primes between 1 and 20 i.e. 17, 13, 11, 7, 5, 3, 2

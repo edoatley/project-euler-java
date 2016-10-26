@@ -12,7 +12,7 @@ package edo.project.euler.problem7;
  * @author Edd
  *
  */
-public class Problem7BruteForce {
+public class Problem07BruteForce {
 	
 	public long solve(int primeRequired) {
 		long candidate = 1;

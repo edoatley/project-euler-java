@@ -12,7 +12,7 @@ package edo.project.euler.problem5;
  * @author Edd
  *
  */
-public class Problem5BruteForce {
+public class Problem05BruteForce {
 
 	public int solve() {
 		

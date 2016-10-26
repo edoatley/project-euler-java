@@ -16,7 +16,7 @@ package edo.project.euler.problem;
  * @author Edd
  *
  */
-public class Problem2BruteForce {
+public class Problem02BruteForce {
 
 	public int solve(int maximum) {
 		int prevTerm = 1;

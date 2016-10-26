@@ -20,7 +20,7 @@ package edo.project.euler.problem6;
  * @author Edd
  *
  */
-public class Problem6BruteForce {
+public class Problem06BruteForce {
 	
 	public int solve(int numberOfNumbers) {
 		

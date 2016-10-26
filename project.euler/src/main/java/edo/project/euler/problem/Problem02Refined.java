@@ -16,7 +16,7 @@ package edo.project.euler.problem;
  * @author Edd
  *
  */
-public class Problem2Refined {
+public class Problem02Refined {
 	
 	public int solve(int maximum) {
 		return 0;

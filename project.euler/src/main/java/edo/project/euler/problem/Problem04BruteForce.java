@@ -13,7 +13,7 @@ package edo.project.euler.problem4;
  * @author Edd
  *
  */
-public class Problem4BruteForce {
+public class Problem04BruteForce {
 
 	public int solve() {
 		int max = 0;

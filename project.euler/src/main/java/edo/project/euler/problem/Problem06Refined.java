@@ -22,7 +22,7 @@ package edo.project.euler.problem6;
  * @author Edd
  *
  */
-public class Problem6Refined {
+public class Problem06Refined {
 	
 	
 	/*

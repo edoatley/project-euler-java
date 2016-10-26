@@ -12,7 +12,7 @@ package edo.project.euler.problem;
  * @author Edd
  *
  */
-public class Problem3Refined {
+public class Problem03Refined {
 
 	// try looping toward each other skipping even numbers and numbers divisible by 5	
 	// if divides exactly then update testee and call recursively unless the other 
