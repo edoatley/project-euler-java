@@ -10,7 +10,7 @@ public class Problem12Test extends TestCase {
 	@Test
 	public void testBruteForce() {
 		int expected = -1;
-		int actual = new Problem12().solve();
+		long actual = new Problem12().solve();
 		assertEquals(expected, actual);
 	}
 	

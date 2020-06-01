@@ -1,11 +1,6 @@
 package edo.project.euler.problem;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-import java.util.TreeMap;
+import java.util.*;
 
 /**
  * Problem 12 - Highly divisible triangular number
@@ -35,79 +30,41 @@ import java.util.TreeMap;
  *
  */
 public class Problem12 {
-//	
-//	// need to make use of the factorisations performed so far!!
-//	public int elegantSolve() {
-//		/*
-//		 * As an example 21 has the factors 1, 3, 7
-//		 * Can we use this to help solve the factors of 155?
-//		 * we can say as 155 / 21  = 5 it follows that 
-//		 * 1, 3, 5, 7 & 21 are factors of 155
-//		 * 
-//		 *  Could there be a factor between 21/2 and 21 - 1 of 21n? 
-//		 *  Lets prove not and lets solve that for nY there is a factor X that is greater than Y/2 and less than Y:
-//		 *  
-//		 *  x > Y/2          10
-//		 *  x < Y            21
-//		 *  nY % x = 0       so a number between 11 and 20 divides exactly 
-//		 *  n * 21 = 11 * x
-//		 */
-//	}
 	
-	private Map<Integer, Integer> factorisationsSoFar = new TreeMap<Integer, Integer>();
-	private List<Integer> factorisationsSoFarKeys = new ArrayList<Integer>();
-	
+	private Map<Integer, Integer> factorisationsSoFar = new TreeMap<>();
+	private List<Integer> factorisationsSoFarKeys = new ArrayList<>();
+
 	public int solve() {
-		
-		int triangle = 0;
-		for (int i = 1; i < Integer.MAX_VALUE; i++) {
-			triangle += i;
+		int i = 1;
+		while(true) {
+			int triangle = (i * (i+1)) / 2;
 			int factors = countFactorsElegant(triangle);
-			if (triangle % 276 == 0) {				
-				System.err.println(triangle + " has " + factors + " factors");
-			}
-			if(factors == 500) {
+			if(factors >= 500) {
 				return triangle;
 			}
+			else if (i%500 == 0) {
+			    System.err.println(triangle + " has " + factors + " factors");
+			}
+			i++;
 		}
-		return -1;
 	}
 
-//	private int countFactors(int num) {
-//		int factors = 1; // set to 1 as divisible by itself at least
-//		
-//		int lim = (num + 1) / 2;
-//		
-//		for (int n = 1; n < lim; n++) {
-//			if((num % n) == 0) {
-//				factors++;
-//			}
-//		}
-//		return factors;
-//	}
 	private int countFactorsElegant(int num) {
-		int factors = 1; // set to 1 as divisible by itself at least
+		int lim = (int) Math.sqrt(num) + 1;
+		Set<Integer> fact = new HashSet(500);
 		
-		int lim = (num + 1) / 2;
-		int start = 1;
-		
-		if(factorisationsSoFarKeys.size() > 0) {
-			for (int i = factorisationsSoFarKeys.size() - 1; i >= 0; i--) {
-				if(num % factorisationsSoFarKeys.get(i) == 0) {
-					start = factorisationsSoFarKeys.get(i) + 1;
-					break;
-				}
-			}
-		}
-		
-		for (int n = start; n < lim; n++) {
+		for (int n = 1; n < lim; n++) {
 			if((num % n) == 0) {
-				factors++;
+				fact.add(n);
+				fact.add(num / n);
 			}
 		}
-		
-		factorisationsSoFar.put(num, factors);
-		factorisationsSoFarKeys.add(num);
-		return factors;
+
+		return fact.size();
+	}
+
+	public static void main(String[] args) {
+		Problem12 problem = new Problem12();
+		System.err.println("Result is " + problem.solve());
 	}
 }

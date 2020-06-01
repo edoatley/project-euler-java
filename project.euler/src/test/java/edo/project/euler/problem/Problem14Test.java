@@ -1,9 +1,8 @@
 package edo.project.euler.problem;
 
-import org.junit.Test;
-
 import edo.project.euler.problem.Problem14;
 import junit.framework.TestCase;
+import org.junit.Test;
 
 public class Problem14Test extends TestCase {
 
