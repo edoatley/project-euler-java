@@ -1,8 +1,6 @@
 package edo.project.euler.problem;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 /**
  * Problem 14 - Longest Collatz sequence 
